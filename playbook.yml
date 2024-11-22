@@ -1,0 +1,17 @@
+---
+- name: configure VM
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install webserver
+      apt:
+        name: nginx
+        state: present
+        update_cache: true
+    - name: Create a user
+      user:
+        name: testuser
+        group: adm
+        shell: /bin/bash
+        create_home: yes
+
