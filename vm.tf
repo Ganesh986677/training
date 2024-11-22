@@ -7,7 +7,7 @@ resource "azurerm_linux_virtual_machine" "training" {
 
   admin_ssh_key {
     username   = var.admin_username
-    public_key = file("~/.ssh/id_rsa.pub")
+    public_key = file("./id_rsa.pub")
   }
 
   network_interface_ids = [
