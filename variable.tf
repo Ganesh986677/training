@@ -26,6 +26,7 @@ variable "admin_password" {
   description = "Password for the VM"
   type        = string
   sensitive   = true
+  default     = "Training@123"
 }
 
 variable "custom_data_script" {
@@ -35,7 +36,7 @@ variable "custom_data_script" {
 #!/bin/bash
 sudo apt update
 sudo apt install apache2 -y
-sudo echo "Welcome to terraform training_testing changes in the custom data" > /var/www/html/index.html
+sudo echo "Welcome to terraform training-testing changes in the custom data" > /var/www/html/index.html
 sudo systemctl start apache2
 sudo systemctl enable apache2
 SCRIPT
